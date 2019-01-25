@@ -1,7 +1,7 @@
 import Vue, { VueConstructor } from "vue";
-import { PluginObject } from "vue/types/plugin";
+import { PluginObject, PluginFunction } from "vue/types/plugin";
 
-export abstract class PluginInstaller implements PluginObject<any> {
+export default class PluginInstaller implements PluginObject<any> {
   /**
    * Create plugin installer instance.
    * @param vue Vue.js instance
@@ -15,5 +15,5 @@ export abstract class PluginInstaller implements PluginObject<any> {
    * @param vue Vue.js instance
    * @param options Vue.js plugin options
    */
-  public install(vue: VueConstructor<Vue>, options?: object | null) { }
+  public install(vue: VueConstructor<Vue>, options?: object | null): PluginFunction<any> { }
 }
