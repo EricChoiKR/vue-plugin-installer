@@ -2,6 +2,10 @@ const Vue = require("vue");
 
 function PluginInstaller(vue, library, pluginName, options) {
   checkArguments(vue, library, pluginName, options);
+  return {
+    install: this.install,
+    ...options
+  }
 }
 
 PluginInstaller.prototype.install = (vue, options) => this.prototype[pluginName] = library
