@@ -2,8 +2,9 @@ const Vue = require("vue");
 
 function PluginInstaller(vue, library, pluginName, options) {
   checkArguments(vue, library, pluginName, options);
-  this.install = (vue, options) => this.prototype[pluginName] = library
 }
+
+PluginInstaller.prototype.install = (vue, options) => this.prototype[pluginName] = library
 
 function checkArguments(vue, library, pluginName, options) {
   if (!vue || typeof vue !== "object") {
